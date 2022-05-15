@@ -1,0 +1,46 @@
+.Works {
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .slider {
+        width: 900px !important;
+        height: 450px !important;
+        border-radius: 25px;
+        display: flex;
+        overflow: hidden;
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .left {
+                flex: 0.4;
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                    h3 {
+                        font-size: 30px;
+                    }
+                    p {
+                        //
+                    }
+                }
+            }
+            .right {
+                flex: 0.6;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

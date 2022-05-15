@@ -1,0 +1,86 @@
+.Intro {
+    .wrapper {
+        display: flex;
+        .left {
+            flex: 0.5;
+            overflow: hidden;
+            // background-color: blue;
+            justify-content: center;
+            align-items: center;
+            .imgContainer {
+                // width: 700px;
+                // height: 700px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    object-fit: contain;
+                    height: fit-content;
+                    width: 60%;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .right {
+            display: flex;
+            flex: 0.5;
+            // background-color: yellow;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .text {
+                height: fit-content;
+                width: 100%;
+                // padding-left: 50px;
+
+
+                h1 {
+                    font-size: 60px;
+                    margin: 10px 0;
+                    height: fit-content;
+                }
+                h2 {
+                    font-size: 35px;
+                    height: fit-content;
+                }
+                h3 {
+                    font-size: 30px;
+                    height: fit-content;
+                    span{
+                        color: crimson;
+                    }
+                }
+            }
+            .ico {
+                height: fit-content;
+                a {
+                    // height: fit-content;
+                    display: flex;
+                    height: fit-content;
+                    justify-content: center;
+                    position: absolute;
+                    bottom: 20px;
+                    width: fit-content;
+                    right: 50%;
+                    animation: arrow 2s infinite;
+                    
+                    :first-child{
+                        height: 100px;
+                        width: fit-content;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    @keyframes arrow {
+                        100%{
+                            opacity: 0;
+                            bottom: 15px;
+                        }
+                }
+                }
+            }
+        }
+    }
+}
