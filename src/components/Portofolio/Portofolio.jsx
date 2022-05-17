@@ -66,12 +66,8 @@ export default function Portofolio() {
     <div className="Portofolio" id="Portofolio">
       <div className="por">
         <h1>Portofolio</h1>
+        <h5>Please note that this is a Dummy Data</h5>
         <ul>
-          {/* <li className="active">Featured</li>
-          <li>Wep App</li>
-          <li>Interior</li>
-          <li>Exterior</li>
-          <li>Branding</li> */}
           {list.map((item) => (
             <PortofolioList
               title={item.title}

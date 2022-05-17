@@ -1,8 +1,24 @@
 import "./Contact.scss";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
-  const handleSubmit = (e) => {
+  function sendEmail(e) {
     e.preventDefault();
+    emailjs.sendForm(
+        "service_418rhh9",
+        "template_dmfwsjg",
+        e.target,
+        "user_m0JLrArxjn3mElbvi39fd"
+      )
+      .then((response) => {
+        console.log(response);
+        alert('I have Recieved your Message');
+        // to rest input values to empty
+        document.querySelector('#email').value = '';
+        document.querySelector('#textarea').value = ''; 
+
+      })
+      .catch((error) => console.log(error));
   }
   return (
     <div className="Contact" id="Contact">
@@ -13,18 +29,18 @@ export default function Contact() {
 
         <div className="right">
           <h2>Contact.</h2>
-          <form action="">
+          <form onSubmit={sendEmail}>
             <div>
               <label htmlFor="email">Email</label>
               <input type="text" name="email" id="email" placeholder="Email" />
             </div>
 
             <div>
-              <label htmlFor="msg">Message</label>
-              <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+              <label htmlFor="textarea">Message</label>
+              <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Message"></textarea>
             </div>
 
-            <button type="submit" className="button" onSubmit={handleSubmit}>
+            <button type="submit" className="button">
               Submit
             </button>
           </form>
