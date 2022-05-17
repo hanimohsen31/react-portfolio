@@ -59,7 +59,7 @@
             align-items: center;
             flex-wrap: wrap;
             height: fit-content !important;
-            margin: 50px;
+            margin: 20px;
             @media (max-width : $mobile){
                 width: 80%;
             }
@@ -68,7 +68,7 @@
                 // height: 150px;
                 
                 width: 275px;
-                height: 200px;
+                height: 150px;
 
                 display: flex;
                 justify-content: center;
