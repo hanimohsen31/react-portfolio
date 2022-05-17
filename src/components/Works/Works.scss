@@ -1,46 +1,145 @@
+@import "../../Global.scss";
 .Works {
     background-color: crimson;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     .slider {
-        width: 900px !important;
+        // width: 900px !important;
         height: 450px !important;
         border-radius: 25px;
         display: flex;
         overflow: hidden;
-        .card {
+        position: absolute;
+        left: 0;
+        transition: all .6s ease;
+        @media (max-width : $mobile){
+            height: 600px !important;
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            position: static; 
+        }
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            .left {
-                flex: 0.4;
-                .content {
+            width: 100vw;
+            @media (max-width : $mobile){
+                width: 85vw;
+                height: fit-content;
+                margin-bottom: 20px;
+            }
+            .item {
+                width: 900px;
+                height: 100%;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 30px;
+                .left {
+                    flex: 4;
+                    // background-color: darkblue;
+                    height: 80%;
                     display: flex;
-                    flex-direction: column;
                     justify-content: center;
+                    align-items: center;
 
-                    img {
-                        height: 100%;
-                        width: 100%;
-                        object-fit: cover;
+                    @media (max-width : $mobile){
+                        height: 95%;
                     }
-                    h3 {
-                        font-size: 30px;
-                    }
-                    p {
-                        //
+
+
+                    .leftContainer {
+                        width: 90%;
+                        height: 70%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        @media (max-width : $mobile){
+                            height: 90%;
+                        }
+                        .imgContainer {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-color: rgb(237, 162, 177);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            @media (max-width : $mobile){
+                                width: 30px;
+                            height: 30px;
+                            }
+                            img {
+                                height: 25px;
+                                @media (max-width : $mobile){
+                                // width: 20px;
+                                height: 20px;
+                                }
+                            }
+                        }
+                        h2 {
+                            font-size: 20px;
+                            @media (max-width : $mobile){
+                                // width: 20px;
+                                font-size: 14px;
+                                }
+                        }
+                        p {
+                            font-size: 13px;
+                            width: 70%;
+                            @media (max-width : $mobile){
+                                // width: 20px;
+                                // width: 90%;
+                                width: 100%;
+                                font-size: 12px;
+                                }
+                        }
+                        span {
+                            font-size: 12px;
+                            font-weight: 600;
+                        }
                     }
                 }
-            }
-            .right {
-                flex: 0.6;
-                img {
-                    width: 100%;
+                .right {
+                    flex: 6;
+                    // background-color: black;
                     height: 100%;
-                    object-fit: cover;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    img {
+                        width: 400px;
+                        transform: rotate(-10deg);
+                        @media (max-width : $mobile){
+                            // width: 160px;
+                            transform: rotate(10deg);
+                        }
+                    }
                 }
             }
         }
+    }
+    .arrow{
+        height: 50px;
+        position: absolute;
+        cursor: pointer;
+        &.left{
+            left: 100px;
+            transform: rotateY(180deg);
+        }
+        &.right{
+            right: 100px;
+            // transform: rotateY(180deg);
+        }
+        @media (max-width : $mobile){
+            // width: 20px;
+            display: none;
+            }
+
     }
 }

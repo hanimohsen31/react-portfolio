@@ -23,6 +23,10 @@
             .logo {
                 font-size: 40px;
                 font-weight: 700;
+                @media (max-width : $mobile){
+                    font-size: 30px;
+                    font-weight: 600;
+                }
             }
             a {
                 text-decoration: none;
@@ -35,10 +39,14 @@
                 align-items: center;
                 display: flex;
                 font-weight: 500;
-
+                @media (max-width : $mobile){
+                    display: none;
+                    
+                }
                 .icon {
                     font-size: 18px;
                     margin-right: 5px;
+
                 }
             }
         }

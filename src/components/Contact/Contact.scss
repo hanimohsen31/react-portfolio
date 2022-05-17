@@ -1,3 +1,123 @@
-.Contact{
-    background-color: lightblue;
+@import "../../Global.scss";
+.Contact {
+    display: flex;
+
+    @media (max-width : $mobile){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        @media (max-width : $mobile){
+            flex-direction: column;
+            // width: 80%;
+            margin: 0;
+            height: 90%;
+        }
+        .left {
+            flex: 1;
+            overflow: hidden;
+            img{
+                height: 100%;
+            }
+        }
+        .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @media (max-width : $mobile){
+                flex: 2;
+                text-align: center;
+            }
+            h2{
+                font-size: 40px;
+                @media (max-width : $mobile){
+                    font-size: 30px;
+                }
+            }
+            form{
+                width: 70%;
+                height: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                @media (max-width : $mobile){
+                    width: 90%;
+                    // height: 90%;
+                    display: block;
+                    height: fit-content;
+                }
+
+                > *{
+                    margin-top: 10px;
+
+                }
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: start;
+                    > *{
+                        margin-top: 10px;
+                    }
+                    label{
+                        height: fit-content;
+                    }
+                }
+                input{
+                    width: 300px;
+                    height: 30px;
+                    font-size: 14px;
+                    border-radius: 5px;
+                    border: 1px solid #777;
+                    @media (max-width : $mobile){
+                        width: auto;
+                        // height: 90%;
+                        // display: block;
+                    }
+                }
+                textarea{
+                    width: 300px;
+                    height: 250px;
+                    font-size: 14px; 
+                    border-radius: 5px;
+                    border: 1px solid #777;
+                    @media (max-width : $mobile){
+                        height: 100px;
+                        width: auto;
+                    }
+                }
+
+
+                button{
+                    width: 150px;
+                    height: 30px;
+                    color: whitesmoke;
+                    background-color: crimson;
+                    border: none;
+                    border-radius: 10px;
+                    margin-top: 45px;
+                    cursor: pointer;
+                    font-weight: 500;
+                    &:focus{
+                        outline: none;
+                    }
+                    @media (max-width : $mobile){
+                        margin: 15px auto;
+                    }
+
+                }
+            }
+        }
+    }
 }
