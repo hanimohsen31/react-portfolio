@@ -5,25 +5,29 @@ export default function Works() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
     {
-      id: "1",
+      id: "0",
       icon: "./assets/imgs/mobile.png",
-      title: "Web Design",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-      img: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
+      title: "Web Development",
+      desc: "Cloning of Netflix (ITI graduation project) Using React.js, SCSS, CSS, Swiper.js, and Bootstrap for Front-End and Django for Back-End. ",
+      // img: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
+      img: "./assets/screenshots/s0.jpg",
+      link: "https://github.com/hanimohsen31/Netflix-V.4-AIO",
+    },
+    {
+      id: "1",
+      icon: "./assets/imgs/globe.png",
+      title: "Front End",
+      desc: "Landing Page for traveling company using HTML and CSS only.",
+      img: "./assets/screenshots/s2.png",
+      link: "https://hanimohsen31.github.io/Halla-Travil",
     },
     {
       id: "2",
-      icon: "./assets/imgs/globe.png",
-      title: "Mobile Application",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: "https://i.pinimg.com/originals/e9/c9/2f/e9c92f7869d682a6fa5a97fb8a298f30.jpg",
-    },
-    {
-      id: "3",
       icon: "./assets/imgs/writing.png",
-      title: "Branding",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      img: "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
+      title: "3d Visualizing",
+      desc: "Portfolio from my previous work as an interior designer.The Website was Built with React.js, CSS, Bootstrap and Animate.js.",
+      img: "./assets/screenshots/s1.jpg",
+      link: "https://collection-interiors.herokuapp.com",
     },
   ];
 
@@ -39,8 +43,8 @@ export default function Works() {
         className="slider"
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
       >
-      {data.map((p) => (
-          <div className="container">
+        {data.map((p) => (
+          <div className="container" key={p.id}>
             <div className="item">
               <div className="left">
                 <div className="leftContainer">
@@ -49,18 +53,37 @@ export default function Works() {
                   </div>
                   <h2>{p.title}</h2>
                   <p>{p.desc}</p>
-                  <span>Projects</span>
+                  <span>
+                    <a
+                      href={p.link}
+                      rel="noreferrer"
+                      target="_blank"
+                      className=""
+                    >
+                      Visit Project
+                    </a>
+                  </span>
                 </div>
               </div>
               <div className="right">
-                <img src={data[0].img} alt="" />
+                <img src={p.img} alt="" />
               </div>
             </div>
           </div>
-      ))}
+        ))}
       </div>
-      <img src="assets/imgs/arrow.png" alt="" className="arrow left" onClick={()=>handleClick('left')}/>
-      <img src="assets/imgs/arrow.png" alt="" className="arrow right" onClick={()=>handleClick()}/>
+      <img
+        src="assets/imgs/arrow.png"
+        alt=""
+        className="arrow left"
+        onClick={() => handleClick("left")}
+      />
+      <img
+        src="assets/imgs/arrow.png"
+        alt=""
+        className="arrow right"
+        onClick={() => handleClick()}
+      />
     </div>
   );
 }

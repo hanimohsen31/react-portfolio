@@ -32,12 +32,12 @@ export default function Contact() {
           <form onSubmit={sendEmail}>
             <div>
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" placeholder="Email" />
+              <input type="text" name="email" id="email" placeholder="Email" required/>
             </div>
 
             <div>
               <label htmlFor="textarea">Message</label>
-              <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Message"></textarea>
+              <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Message" required></textarea>
             </div>
 
             <button type="submit" className="button">
