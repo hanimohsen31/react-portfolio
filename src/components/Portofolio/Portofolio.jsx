@@ -91,7 +91,6 @@ export default function Portofolio() {
     <div className="Portofolio" id="Portofolio">
       <div className="por">
         <h1>Portofolio</h1>
-        <h5>Please note that this is a Dummy Data</h5>
         <ul>
           {list.map((item) => (
             <PortofolioList
