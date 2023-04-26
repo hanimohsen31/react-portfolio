@@ -11,16 +11,15 @@ export default function Topbar({menueOpen,setMenueOpen}) {
 
           <div className="itemContainer">
             <PersonIcon className="icon"/>
-            <span>+201116886029</span>
+            <span>
+              <a href="tel:+201116886029">+201116886029</a></span>
           </div>
 
           <div className="itemContainer">
             <EmailIcon className="icon"/>
-            <span>hanimohsen31@gmail.com</span>
+            <span><a href="mailto: hanimohsen31@gmail.com">hanimohsen31@gmail.com</a></span>
           </div>
         </div>
-
-        {/* <h1>Hani Mohsen</h1> */}
         <div className="right">
           <div className="hambo" onClick={()=>{setMenueOpen(!menueOpen)}}>
              <span></span>

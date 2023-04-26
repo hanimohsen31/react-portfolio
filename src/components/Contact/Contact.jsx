@@ -4,7 +4,8 @@ import emailjs from "emailjs-com";
 export default function Contact() {
   function sendEmail(e) {
     e.preventDefault();
-    emailjs.sendForm(
+    emailjs
+      .sendForm(
         "service_418rhh9",
         "template_dmfwsjg",
         e.target,
@@ -12,13 +13,15 @@ export default function Contact() {
       )
       .then((response) => {
         console.log(response);
-        alert('I have Recieved your Message');
+        alert("I have Recieved your Message");
         // to rest input values to empty
-        document.querySelector('#email').value = '';
-        document.querySelector('#textarea').value = ''; 
-
+        document.querySelector("#email").value = "";
+        document.querySelector("#textarea").value = "";
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        alert("Something Went Wrong");
+      });
   }
   return (
     <div className="Contact" id="Contact">
@@ -32,12 +35,25 @@ export default function Contact() {
           <form onSubmit={sendEmail}>
             <div>
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" placeholder="Email" required/>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
             </div>
 
             <div>
               <label htmlFor="textarea">Message</label>
-              <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Message" required></textarea>
+              <textarea
+                name="textarea"
+                id="textarea"
+                cols="30"
+                rows="10"
+                placeholder="Message"
+                required
+              ></textarea>
             </div>
 
             <button type="submit" className="button">

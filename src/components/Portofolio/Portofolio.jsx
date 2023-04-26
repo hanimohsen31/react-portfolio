@@ -1,29 +1,24 @@
 import "./Portofolio.scss";
 import PortofolioList from "../PortofolioList/PortofolioList";
 import { useState, useEffect } from "react";
-import {
-  featuredPortfolio,
-  myData,
-} from "../../data";
+import { myData } from "../../data";
 
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-
+  let currentIndex = array.length,
+    randomIndex;
   // While there remain elements to shuffle.
   while (currentIndex !== 0) {
-
     // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
-
   return array;
 }
-
 
 export default function Portofolio() {
   const [selected, setSelected] = useState("All Projects");
@@ -38,10 +33,6 @@ export default function Portofolio() {
       title: "Wep App",
     },
     {
-      id: "Front-End",
-      title: "Front-End",
-    },
-    {
       id: "Interior",
       title: "Interior",
     },
@@ -50,39 +41,35 @@ export default function Portofolio() {
       title: "Exterior",
     },
   ];
-  
+
   useEffect(() => {
+    let slicer = 6;
     switch (selected) {
       case "All Projects":
-        setData(shuffle(myData.slice(0,8)));
+        setData([
+          myData[0],
+          myData[4],
+          myData[6],
+          myData[7],
+          myData[12],
+          myData[14],
+        ]);
         break;
 
       case "Wep App":
-        // setData(shuffle(web.slice(0,8)));
-        setData(shuffle(myData.filter(e=>e.type === 'web').slice(0,8)));
-
-        break;
-
-      case "Front-End":
-        // setData(shuffle(web.slice(0,8)));
-        setData(shuffle(myData.filter(e=>e.type === 'web').slice(0,8)));
-
+        setData(myData.filter((e) => e.type === "web"));
         break;
 
       case "Interior":
-        // setData(interior.slice(0,8));
-        setData(shuffle(myData.filter(e=>e.type === 'interior').slice(0,8)));
-
+        setData(myData.filter((e) => e.type === "interior"));
         break;
 
       case "Exterior":
-        // setData(exterior.slice(0,8));
-        setData(shuffle(myData.filter(e=>e.type === 'exterior').slice(0,8)));
-
+        setData(myData.filter((e) => e.type === "exterior"));
         break;
 
       default:
-        setData(featuredPortfolio.slice(0,8));
+        setData(shuffle(myData.slice(0, slicer)));
         break;
     }
   }, [selected]);
@@ -99,14 +86,13 @@ export default function Portofolio() {
               setSelected={setSelected}
               id={item.id}
               key={item.id}
-
             />
           ))}
         </ul>
 
         <div className="container">
-          {data.map((d) => (
-            <div key={Math.random()} className="item">
+          {data.map((d, indx) => (
+            <div key={indx} className="item">
               <img src={d.img} alt="" />
               <h3>{d.title}</h3>
             </div>
