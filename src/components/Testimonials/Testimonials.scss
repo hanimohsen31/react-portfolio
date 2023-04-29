@@ -1,14 +1,14 @@
 @import "../../Global.scss";
 .Testimonials {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     cursor: pointer;
     @media (max-width: $mobile) {
         display: flex;
         flex-direction: column;
-        width: 80%;
-        justify-content: center;
+        width: 90%;
+        justify-content: flex-start;
         align-items: center;
         text-align: center;
         margin: auto;
@@ -27,14 +27,21 @@
         margin: 0 15px;
         transition: all 0.1s ease-in-out;
         @media (max-width: $mobile) {
+            height: 150px;
+            width: 250px;
+
             margin: 15px;
+            justify-content: center;
         }
         &.featured {
             height: 430px;
             width: 270px;
             @media (max-width: $mobile) {
-                height: 400px;
+                // height: 400px;
+                height: 150px;
                 width: 250px;
+                margin: 15px;
+
             }
         }
         &:hover {
@@ -79,6 +86,7 @@
             height: fit-content !important;
             @media (max-width: $mobile) {
                 overflow: hidden;
+                font-size: 14px;
             }
             p {
                 background-color: rgb(255 229 234 / 30%);

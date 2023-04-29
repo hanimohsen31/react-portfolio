@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    // background-color: blue;
     @media (max-width: $mobile) {
         overflow: hidden;
     }
@@ -12,7 +13,7 @@
         width: 100%;
         @media (max-width: $mobile) {
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             overflow: hidden;
         }
@@ -61,7 +62,8 @@
                 // padding-left: 50px;
                 @media (max-width: $mobile) {
                     text-align: center;
-                    height: 280px;
+                    // height: 280px;
+                    height: 275px;
                     display: block;
                     width: 250px;
                     position: static;

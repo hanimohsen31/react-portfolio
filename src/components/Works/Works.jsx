@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { slider as data} from "../../data";
+import { slider as data} from "../../store/data";
 import "./Works.scss";
 
 export default function Works() {
@@ -20,7 +20,7 @@ export default function Works() {
       >
         {data.map((p) => (
           <div className="container" key={p.id}>
-            <div className="item" onTouchMove={() => handleClick("right")} >
+            <div className="item" onTouchEnd={() => handleClick("right")} >
               <div className="left">
                 <div className="leftContainer">
                   <div className="imgContainer">

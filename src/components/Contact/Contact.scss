@@ -57,6 +57,7 @@
                     // height: 90%;
                     display: block;
                     height: fit-content;
+                    overflow: hidden;
                 }
 
                 > *{
@@ -95,6 +96,8 @@
                     @media (max-width : $mobile){
                         height: 100px;
                         width: auto;
+                        // max-width: 100%;
+                        // max-height: 100px;
                     }
                 }
 

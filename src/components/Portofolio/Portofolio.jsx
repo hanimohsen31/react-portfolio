@@ -1,7 +1,7 @@
 import "./Portofolio.scss";
 import PortofolioList from "../PortofolioList/PortofolioList";
 import { useState, useEffect } from "react";
-import { myData } from "../../data";
+import { myData } from "../../store/data";
 
 function shuffle(array) {
   let currentIndex = array.length,

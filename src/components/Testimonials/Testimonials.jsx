@@ -1,4 +1,4 @@
-import { testimonials as data } from "../../data";
+import { testimonials as data } from "../../store/data";
 import "./Testimonials.scss";
 
 export default function Testimonials(prps) {

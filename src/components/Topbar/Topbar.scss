@@ -2,13 +2,14 @@
 
 .Topbar {
     width: 100%;
-    height: 70px;
+    height: $navbar;
     background-color: white;
     color: $mainColor;
     position: fixed;
     top: 0;
     z-index: 99;
-    transition: all 1s ease ;
+    transition: all 1s ease;
+    // background-color: green;
 
     .wrapper {
         padding: 10px 30px;
@@ -23,7 +24,7 @@
             .logo {
                 font-size: 40px;
                 font-weight: 700;
-                @media (max-width : $mobile){
+                @media (max-width: $mobile) {
                     font-size: 30px;
                     font-weight: 600;
                 }
@@ -39,14 +40,12 @@
                 align-items: center;
                 display: flex;
                 font-weight: 500;
-                @media (max-width : $mobile){
+                @media (max-width: $mobile) {
                     display: none;
-                    
                 }
                 .icon {
                     font-size: 18px;
                     margin-right: 5px;
-
                 }
             }
         }
@@ -73,7 +72,7 @@
 .active {
     background-color: $mainColor;
     color: white;
-    transition: all 1s ease ;
+    transition: all 1s ease;
 
     .wrapper {
         .right {
@@ -84,4 +83,8 @@
             }
         }
     }
+}
+
+.topFiller {
+    height: $navbar;
 }
