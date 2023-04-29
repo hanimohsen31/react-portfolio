@@ -89,7 +89,6 @@ export default function Portofolio() {
             />
           ))}
         </ul>
-
         <div className="container">
           {data.map((d, indx) => (
             <div key={indx} className="item">

@@ -20,7 +20,7 @@ export default function Works() {
       >
         {data.map((p) => (
           <div className="container" key={p.id}>
-            <div className="item">
+            <div className="item" onTouchMove={() => handleClick("right")} >
               <div className="left">
                 <div className="leftContainer">
                   <div className="imgContainer">
