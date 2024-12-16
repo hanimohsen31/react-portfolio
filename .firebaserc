@@ -1,5 +1,16 @@
 {
   "projects": {
-    "default": "portfolio-300"
-  }
+    "default": "collection-5000"
+  },
+  "targets": {
+    "collection-5000": {
+      "hosting": {
+        "react-personal-portfolio-100": [
+          "react-personal-portfolio-100"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
